@@ -1,0 +1,11 @@
+{
+  "name": "angular-notif-bar",
+  "version": "1.0.0",
+  "description": "AngularJS Notification Bar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Budi Irawan <deerawan@gmail.com> (http://budiirawan.com)",
+  "license": "MIT"
+}
