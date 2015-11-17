@@ -3,17 +3,34 @@
 
   angular
     .module('bgn.NotifBar')
-    .factory('notifBar', notifBar);
+    .provider('notifBar', notifBarProvider);
 
-    function notifBar() {
-      var service = {
-        info: info,
-        error: error,
-        success: success,
-        warning: warning
+    function notifBarProvider() {
+
+      this.options = {
+        delay: 5000
       };
 
-      return service;
+      this.setOptions = function(options) {
+        if (!angular.isObject(options)) throw new Error('Options format should be an object');
+        this.options = angular.extend({}, this.options, options);
+      };
+
+      this.$get = notifBar;
+
+      function notifBar() {
+        var service = {
+
+        };
+
+        return service;
+
+        var options = this.options;
+
+        $http.get(args.template, {cache: $templateCache}).success(function(template) {
+
+        });
+      }
     }
 
 })();
