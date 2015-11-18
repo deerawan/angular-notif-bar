@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var uglify = require('gulp-uglify');
+var Server = require('karma').Server;
 
 gulp.task('less', function() {
   return gulp.src('./src/**/*.less')
@@ -18,4 +19,13 @@ gulp.task('uglify', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['less', 'uglify']);
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start();
+});
+
+gulp.task('default', ['less', 'uglify', 'test']);
